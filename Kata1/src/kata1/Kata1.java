@@ -1,6 +1,9 @@
 package kata1;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+
 
 /** 
  * @author Marcos del Cristo Díaz Gil
@@ -11,15 +14,14 @@ public class Kata1 {
 
 
     public static void main(String[] args) {
+        Calendar fecha; 
+        fecha = GregorianCalendar.getInstance();
+        fecha.set(1992, 7, 31);
         // Datos para una persona cualquiera nacida un 31 de julio de 1992
-        Person p = new Person ("Marcos", new Date(92, 6, 31)); 
-        System.out.println(p.getName() + " tiene " + p.getAge() + " aÃ±os");
-        
-        /**
-         * Date es una clase obsoleta que suma 1900 al año introducido. 
-         * Sólo funciona con aÃ±os desde 1900 hasta 1999.
-         * Años fuera de ese rango presentan información incoherente.
-         */
+        Person p = new Person ("Marcos", fecha); 
+        System.out.println(p.getName() + " tiene " + p.getAge() + " años");
+        // Utilizar Calendar resuelve varias limitaciones del formato Date
+
     }
     
 }
